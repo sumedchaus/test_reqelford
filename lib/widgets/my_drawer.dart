@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:test_reqelford/const/asset_path.dart';
 import 'package:test_reqelford/controller/login_controller.dart';
-import 'package:get/get.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/profile_screen.dart';
+import 'package:test_reqelford/video/screens/video_screen.dart';
 
 import 'list_expansion_tile.dart';
 import 'list_tile_drawer.dart';
 
 class MyDrawer extends StatelessWidget {
-  LoginController loginController = Get.find<LoginController>();
+ final LoginController loginController = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
@@ -77,26 +78,43 @@ class MyDrawer extends StatelessWidget {
                 onTap: () {},
                 icon: Icon(Icons.phone_in_talk_sharp)),
             ListExpandedTileView(
-                title: 'Assessments',
-                icon1: Icon(Icons.note_add),
-                expansionListTile: Column(
-                  children: [
-                    listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Assesments', onTap: (){},),
-                    listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Computerbased Test', onTap: (){},),
-                  ],
-                ),
+              title: 'Assessments',
+              icon1: Icon(Icons.note_add),
+              expansionListTile: Column(
+                children: [
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'Assessments',
+                    onTap: () {},
+                  ),
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'Computer Based Test',
+                    onTap: () {},
+                  ),
+                ],
+              ),
             ),
             ListExpandedTileView(
               title: 'Video Library',
               icon1: Icon(Icons.video_collection),
               expansionListTile: Column(
                 children: [
-                  listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Genral Videos', onTap: (){},),
-                  listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Acadmic Videos', onTap: (){},),
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'General Videos',
+                    onTap: () {
+                      Get.to(() => VideoScreen());
+                    },
+                  ),
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'Academic Videos',
+                    onTap: () {},
+                  ),
                 ],
               ),
             ),
-
 
             // listTileDrawer(
             //     text: 'Assessments',

@@ -3,32 +3,27 @@ import 'package:get/get.dart';
 import 'package:test_reqelford/model/loginModel.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 
-
-class LoginController extends GetxController{
+class LoginController extends GetxController {
   LoginModel loginModel = LoginModel();
   TextEditingController userNameEditingController;
   TextEditingController passwordEditingController;
   final colorBool = false.obs;
 
-
-
-  void loginAuth(){
+  void loginAuth() {
     var userName = userNameEditingController;
     var password = passwordEditingController;
 
-    if(userName.text.isEmpty){
+    if (userName.text.isEmpty) {
       Get.snackbar('Failed', 'UserName Required');
       return;
     }
-    if(password.text.isEmpty){
+    if (password.text.isEmpty) {
       Get.snackbar('Failed', 'Password Required');
       return;
     }
-    if(password.text.length  < 4){
+    if (password.text.length < 4) {
       Get.snackbar('Failed', 'InValid Password');
-
-    }
-    else{
+    } else {
       loginModel.userName = userName.text;
       loginModel.password = password.text;
       print(loginModel.userName);
@@ -43,6 +38,4 @@ class LoginController extends GetxController{
     userNameEditingController = TextEditingController();
     passwordEditingController = TextEditingController();
   }
-
-
 }
