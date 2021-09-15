@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/login_screen.dart';
 import 'package:test_reqelford/screen/profile_screen.dart';
+
+import 'assignment/assignment_screen.dart';
 
 void main() {
   runApp(MyApp());
