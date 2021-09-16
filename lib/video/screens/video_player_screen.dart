@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_reqelford/video/models/video.dart';
 import 'package:test_reqelford/video/screens/video_screen.dart';
+import 'package:test_reqelford/widgets/my_drawer.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
-  //
   VideoPlayerScreen({this.videoItem});
 
   final VideoItem videoItem;
@@ -53,6 +53,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MyDrawer(),
       appBar: AppBar(
         title: Text(widget.videoItem.video.title),
       ),

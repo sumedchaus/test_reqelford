@@ -5,6 +5,9 @@ import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/login_screen.dart';
 import 'package:test_reqelford/screen/profile_screen.dart';
+import 'package:test_reqelford/video/screens/video_screen.dart';
+
+import 'class_schedule/class_schedule.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +28,6 @@ class MyApp extends StatelessWidget {
         ).apply(
           bodyColor: Colors.black,
           displayColor: Colors.blue,
-
         ),
         // platform: TargetPlatform.iOS,
         primarySwatch: Colors.deepPurple,
@@ -36,6 +38,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: DashBoard.id, page: () => DashBoard()),
         GetPage(name: ProfileScreen.id, page: () => ProfileScreen()),
         GetPage(name: AssignmentScreen.id, page: () => AssignmentScreen()),
+        GetPage(
+            name: ClassScheduleScreen.id, page: () => ClassScheduleScreen()),
+        GetPage(name: VideoScreen.id, page: () => VideoScreen()),
       ],
     );
   }

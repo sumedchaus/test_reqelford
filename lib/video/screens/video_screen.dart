@@ -3,8 +3,11 @@ import 'package:test_reqelford/video/models/chennal.dart';
 import 'package:test_reqelford/video/models/video.dart';
 import 'package:test_reqelford/video/screens/video_player_screen.dart';
 import 'package:test_reqelford/video/utils/service.dart';
+import 'package:test_reqelford/widgets/my_drawer.dart';
 
 class VideoScreen extends StatefulWidget {
+  static final String id = '/VideoScreen';
+
   @override
   _VideoScreenState createState() => _VideoScreenState();
 }
@@ -55,6 +58,10 @@ class _VideoScreenState extends State<VideoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MyDrawer(),
+      appBar: AppBar(
+        title: Text('General Video'),
+      ),
       body: _loading
           ? Center(
               child: CircularProgressIndicator(),

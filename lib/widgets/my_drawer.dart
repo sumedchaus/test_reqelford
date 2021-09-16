@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_reqelford/class_schedule/class_schedule.dart';
 import 'package:test_reqelford/const/asset_path.dart';
 import 'package:test_reqelford/controller/login_controller.dart';
-import 'package:get/get.dart';
 import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/profile_screen.dart';
@@ -73,50 +74,55 @@ class MyDrawer extends StatelessWidget {
                 },
                 icon: Icon(Icons.person)),
             listTileDrawer(
-                text: 'Class Schedules', onTap: () {}, icon: Icon(Icons.menu)),
+                text: 'Class Schedules',
+                onTap: () {
+                  Get.toNamed(ClassScheduleScreen.id);
+                },
+                icon: Icon(Icons.menu)),
             listTileDrawer(
                 text: 'Assignments',
                 onTap: () {
-
                   Get.toNamed(AssignmentScreen.id);
-
                 },
                 icon: Icon(Icons.phone_in_talk_sharp)),
             ListExpandedTileView(
-                title: 'Assessments',
-                icon1: Icon(Icons.note_add),
-                expansionListTile: Column(
-                  children: [
-                    listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Assesments', onTap: (){},),
-                    listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Computerbased Test', onTap: (){},),
-                  ],
-                ),
+              title: 'Assessments',
+              icon1: Icon(Icons.note_add),
+              expansionListTile: Column(
+                children: [
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'Assesments',
+                    onTap: () {},
+                  ),
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'Computerbased Test',
+                    onTap: () {},
+                  ),
+                ],
+              ),
             ),
             ListExpandedTileView(
               title: 'Video Library',
               icon1: Icon(Icons.video_collection),
               expansionListTile: Column(
                 children: [
-                  listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Genral Videos', onTap: (){
-                    Get.to(VideoScreen());
-
-                  },),
-                  listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Acadmic Videos', onTap: (){
-
-                  },),
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'Genral Videos',
+                    onTap: () {
+                      Get.toNamed(VideoScreen.id);
+                    },
+                  ),
+                  listTileDrawer(
+                    iconLeading: Icon(Icons.arrow_forward),
+                    text: 'Acadmic Videos',
+                    onTap: () {},
+                  ),
                 ],
               ),
             ),
-
-
-            // listTileDrawer(
-            //     text: 'Assessments',
-            //     onTap: () {},
-            //     icon: Icon(Icons.account_box_outlined)),
-            // listTileDrawer(
-            //     text: 'Video Library',
-            //     onTap: () {},
-            //     icon: Icon(Icons.video_collection)),
             listTileDrawer(
                 text: 'Report Card',
                 onTap: () {},

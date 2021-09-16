@@ -10,6 +10,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path/path.dart' as path;
 import 'package:test_reqelford/model/base_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'assignment_service.dart';
 
 
@@ -17,8 +18,7 @@ class AssignmentController extends GetxController {
   bool allowWriteFile = false;
   String progress = "";
   Dio dio;
-  // final String fileUrl = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg';
-  // final String fileName = "Sumedd";
+
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
 
@@ -137,7 +137,7 @@ class AssignmentController extends GetxController {
   Future<void> download(String url, String fileName) async {
     final dir = await _getDownloadDirectory();
     final isPermissionStatusGranted = await _requestPermissions();
-    fileName = "${fileName}.jpg";
+    fileName = "$fileName.jpg";
     if (isPermissionStatusGranted) {
       final savePath = path.join(dir.path, fileName);
       await _startDownload(savePath,url);
@@ -146,6 +146,19 @@ class AssignmentController extends GetxController {
     }
   }
 
+
+  Future<void> launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'my_header_key': 'my_header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
 }
 

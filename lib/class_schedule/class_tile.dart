@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:test_reqelford/model/base_model.dart';
-import 'assignment_controller.dart';
+import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
 
 
-
-class AssignmentTile extends StatelessWidget {
+class ClassTile extends StatelessWidget {
   final Welcome welcome;
-  AssignmentTile(this.welcome);
-AssignmentController assignmentController = Get.find<AssignmentController>();
+
+  ClassTile(this.welcome);
+
+  final AssignmentController assignmentController =
+      Get.find<AssignmentController>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +29,6 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    AssignmentText(
-                      textBackgroundColor: Colors.deepPurple[400],
-                      title:
-                      ' ${DateFormat('dd-MM-yyyy').format(DateTime.now())}',
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    AssignmentText(
-                      title: " ${welcome.name}",
-                      textBackgroundColor: Colors.red[400],
-                    ),
                     Container(
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
@@ -46,8 +36,14 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              " ${welcome.category}",
+                              welcome.name,
                               style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              welcome.brand.toString(),
                             ),
                             SizedBox(
                               height: 10,
@@ -61,7 +57,7 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                                     color: Colors.grey,
                                   ),
                                   text:
-                                  ' ${DateFormat('dd-MM-yyyy').format(DateTime.now())}',
+                                      ' ${DateFormat('dd-MM-yyyy').format(DateTime.now())}',
                                 ),
                                 SizedBox(
                                   width: 15,
@@ -84,7 +80,7 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                                 size: 15,
                                 color: Colors.redAccent,
                               ),
-                              text: '  Submitted/Not Yet',
+                              text: '  45 min Duration',
                             ),
                             SizedBox(
                               height: 15,
@@ -92,44 +88,38 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                             Row(
                               children: [
                                 Expanded(
-                                    child: RaisedButton(
-                                      onPressed: () {
-                                        assignmentController.onReceivedProgress();
-                                        assignmentController.download(welcome.imageLink,welcome.name);
-
-
-
-                                      },
-                                      child: Text(
-                                        "Download",
-                                        style: TextStyle(color: Colors.purple),
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      assignmentController
+                                          .launchInBrowser(welcome.imageLink);
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.purple[200],
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 50, vertical: 20),
+                                      textStyle: TextStyle(
+                                        color: Colors.white,
                                       ),
-                                      color: Colors.deepPurple[100],
-                                    )),
-                                SizedBox(
-                                  width: 10,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Icon(
+                                          Icons.forward,
+                                          color: Colors.deepPurple,
+                                        ),
+                                        Text(
+                                          "Join Class Room",
+                                          style: TextStyle(
+                                              color: Colors.deepPurple,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                                Expanded(
-                                    child: RaisedButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "Upload File",
-                                        style: TextStyle(color: Colors.blue),
-                                      ),
-                                      color: Colors.lightBlue[100],
-                                    )),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                    child: RaisedButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "View File",
-                                        style: TextStyle(color: Colors.green),
-                                      ),
-                                      color: Colors.greenAccent[100],
-                                    )),
                               ],
                             )
                           ],
@@ -161,7 +151,7 @@ class IconWithText extends StatelessWidget {
           WidgetSpan(child: icon),
           TextSpan(
             text: text,
-            style: TextStyle(color: Colors.grey,fontSize: 12),
+            style: TextStyle(color: Colors.grey, fontSize: 12),
           ),
         ],
       ),
@@ -184,10 +174,7 @@ class AssignmentText extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Text(
           title,
-          style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
     );

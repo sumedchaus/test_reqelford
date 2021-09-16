@@ -10,7 +10,7 @@ class listTileDrawer extends StatelessWidget {
   final Icon iconLeading;
 
   listTileDrawer(
-      {@required this.text, @required this.onTap, @required this.icon, this.iconLeading});
+      { this.text, this.onTap, this.icon, this.iconLeading});
 
   @override
   Widget build(BuildContext context) {
