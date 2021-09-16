@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_reqelford/screen/assessments/assessments_controller.dart';
+import 'package:test_reqelford/screen/assessments/assessments_screen.dart';
 import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
 import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/class_schedule/class_schedule.dart';
@@ -40,9 +41,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: DashBoard.id, page: () => DashBoard()),
         GetPage(name: ProfileScreen.id, page: () => ProfileScreen()),
         GetPage(name: AssignmentScreen.id, page: () => AssignmentScreen()),
-        GetPage(
-            name: ClassScheduleScreen.id, page: () => ClassScheduleScreen()),
+        GetPage(name: ClassScheduleScreen.id, page: () => ClassScheduleScreen()),
         GetPage(name: VideoScreen.id, page: () => VideoScreen()),
+        GetPage(name: AssessmentScreen.id, page: () => AssessmentScreen()),
       ],
     );
   }

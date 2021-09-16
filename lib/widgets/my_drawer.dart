@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_reqelford/const/asset_path.dart';
 import 'package:test_reqelford/controller/login_controller.dart';
+import 'package:test_reqelford/screen/assessments/assessments_screen.dart';
 import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/class_schedule/class_schedule.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
@@ -93,7 +94,10 @@ class MyDrawer extends StatelessWidget {
                   listTileDrawer(
                     iconLeading: Icon(Icons.arrow_forward),
                     text: 'Assesments',
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(AssessmentScreen.id);
+
+                    },
                   ),
                   listTileDrawer(
                     iconLeading: Icon(Icons.arrow_forward),
