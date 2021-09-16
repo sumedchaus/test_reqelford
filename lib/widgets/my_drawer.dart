@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_reqelford/class_schedule/class_schedule.dart';
 import 'package:test_reqelford/const/asset_path.dart';
 import 'package:test_reqelford/controller/login_controller.dart';
 import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
+import 'package:test_reqelford/screen/class_schedule/class_schedule.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/profile_screen.dart';
-import 'package:test_reqelford/video/screens/video_screen.dart';
+import 'package:test_reqelford/screen/video/screens/video_screen.dart';
 
 import 'list_expansion_tile.dart';
 import 'list_tile_drawer.dart';
