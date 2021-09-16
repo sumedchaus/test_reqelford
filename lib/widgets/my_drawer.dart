@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_reqelford/const/asset_path.dart';
 import 'package:test_reqelford/controller/login_controller.dart';
 import 'package:get/get.dart';
+import 'package:test_reqelford/screen/assessments/assessments_screen.dart';
 import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/profile_screen.dart';
@@ -16,6 +17,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation:50 ,
       // Add a ListView to the drawer. This ensures the user can scroll
       // through the options in the drawer if there isn't enough vertical
       // space to fit everything.
@@ -87,7 +89,11 @@ class MyDrawer extends StatelessWidget {
                 icon1: Icon(Icons.note_add),
                 expansionListTile: Column(
                   children: [
-                    listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Assesments', onTap: (){},),
+                    listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Assesments', onTap: (){
+
+                      Get.to(AssessmentScreen());
+
+                    },),
                     listTileDrawer(iconLeading: Icon(Icons.arrow_forward), text: 'Computerbased Test', onTap: (){},),
                   ],
                 ),

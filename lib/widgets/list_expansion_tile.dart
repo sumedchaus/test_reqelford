@@ -13,7 +13,9 @@ class ListExpandedTileView extends StatelessWidget {
     return ExpansionTile(
       trailing: icon1,
 
-      title: Text(title),
+      title: Text(title,style: TextStyle(
+        fontWeight: FontWeight.bold
+      ),),
 
       children: [
         expansionListTile,
