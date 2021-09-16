@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
-
+import 'assignment_controller.dart';
 import 'assignment_data.dart';
 
 
@@ -96,6 +95,8 @@ AssignmentController assignmentController = Get.put(AssignmentController());
                                     child: RaisedButton(
                                       onPressed: () {
 
+                                        assignmentController.onReceivedProgress();
+                                        assignmentController.download(welcome.imageLink);
 
 
 

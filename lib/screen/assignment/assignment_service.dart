@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
 
+import 'assignment_controller.dart';
 import 'assignment_data.dart';
 
 

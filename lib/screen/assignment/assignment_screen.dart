@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
-import 'package:test_reqelford/screen/assignment/assignment_tile.dart';
 import 'package:test_reqelford/widgets/my_drawer.dart';
 
+import 'assignment_controller.dart';
 import 'assignment_data.dart';
+import 'assignment_tile.dart';
 
 
 class AssignmentScreen extends StatelessWidget {
