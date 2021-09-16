@@ -11,7 +11,7 @@ class AssignmentScreen extends StatelessWidget {
  static final String id = '/AssignmentScreen';
   // String now = DateFormat("dd-MM-yyyy").format(DateTime.now());
   Welcome welcome = Welcome();
-  AssignmentController assignmentController = Get.put(AssignmentController());
+  AssignmentController assignmentController = Get.find<AssignmentController>();
 
 
 
@@ -29,7 +29,7 @@ class AssignmentScreen extends StatelessWidget {
       ),
       body: GetX<AssignmentController>(
             init: AssignmentController(),
-             builder: (myFoodController) =>
+             builder: (assignmentController) =>
                  ListView.builder(
         itemCount: assignmentController.listData.length,
 

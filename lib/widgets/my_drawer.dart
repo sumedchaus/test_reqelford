@@ -63,13 +63,13 @@ class MyDrawer extends StatelessWidget {
               icon: Icon(Icons.dashboard_customize),
               text: 'Dashboard',
               onTap: () {
-                Get.offNamed(DashBoard.id);
+                Get.toNamed(DashBoard.id);
               },
             ),
             listTileDrawer(
                 text: 'Profile',
                 onTap: () {
-                  Get.offNamed(ProfileScreen.id);
+                  Get.toNamed(ProfileScreen.id);
                 },
                 icon: Icon(Icons.person)),
             listTileDrawer(
@@ -78,7 +78,7 @@ class MyDrawer extends StatelessWidget {
                 text: 'Assignments',
                 onTap: () {
 
-                  Get.to(AssignmentScreen());
+                  Get.toNamed(AssignmentScreen.id);
 
                 },
                 icon: Icon(Icons.phone_in_talk_sharp)),

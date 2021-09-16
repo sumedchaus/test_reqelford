@@ -9,7 +9,7 @@ import 'assignment_data.dart';
 class AssignmentTile extends StatelessWidget {
   final Welcome welcome;
   AssignmentTile(this.welcome);
-AssignmentController assignmentController = Get.put(AssignmentController());
+AssignmentController assignmentController = Get.find<AssignmentController>();
 
   @override
   Widget build(BuildContext context) {
@@ -94,9 +94,8 @@ AssignmentController assignmentController = Get.put(AssignmentController());
                                 Expanded(
                                     child: RaisedButton(
                                       onPressed: () {
-
                                         assignmentController.onReceivedProgress();
-                                        assignmentController.download(welcome.imageLink);
+                                        assignmentController.download(welcome.imageLink,);
 
 
 
