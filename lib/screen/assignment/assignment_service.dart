@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 import 'assignment_controller.dart';
 import 'assignment_data.dart';
@@ -7,6 +8,7 @@ import 'assignment_data.dart';
 
 
 var controller= AssignmentController.to;
+var loading = true;
 
 class DataServices {
   static Future<List<Welcome>> fetchData() async {
@@ -21,9 +23,11 @@ class DataServices {
     Response response = await dio.get(url);
     // Get.back();
     if (response.statusCode == 200) {
+
       print(response.statusCode);
       for (var item in response.data) {
         controller.listData.add(Welcome.fromJson(item));
+
       }
       return controller.listData;
     }

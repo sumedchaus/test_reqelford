@@ -95,7 +95,7 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                                     child: RaisedButton(
                                       onPressed: () {
                                         assignmentController.onReceivedProgress();
-                                        assignmentController.download(welcome.imageLink,);
+                                        assignmentController.download(welcome.imageLink,welcome.name);
 
 
 

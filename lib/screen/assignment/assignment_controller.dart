@@ -15,12 +15,11 @@ import 'assignment_service.dart';
 
 
 class AssignmentController extends GetxController {
-  bool isLoading;
   bool allowWriteFile = false;
   String progress = "";
   Dio dio;
   // final String fileUrl = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg';
-  final String fileName = "Sumedd";
+  // final String fileName = "Sumedd";
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
 
@@ -40,7 +39,8 @@ class AssignmentController extends GetxController {
     final android = AndroidInitializationSettings('@mipmap/ic_launcher');
     final iOS = IOSInitializationSettings();
     final initSettings = InitializationSettings(android, iOS);
-    flutterLocalNotificationsPlugin.initialize(initSettings, onSelectNotification: _onSelectNotification);
+    flutterLocalNotificationsPlugin.initialize(initSettings, onSelectNotification: _onSelectNotification
+   );
 
   }
   Future<void> _onSelectNotification(String json) async {
@@ -135,10 +135,10 @@ class AssignmentController extends GetxController {
     }
   }
 
-  Future<void> download(String url) async {
+  Future<void> download(String url, String fileName) async {
     final dir = await _getDownloadDirectory();
     final isPermissionStatusGranted = await _requestPermissions();
-
+    fileName = "${fileName}.jpg";
     if (isPermissionStatusGranted) {
       final savePath = path.join(dir.path, fileName);
       await _startDownload(savePath,url);
