@@ -9,8 +9,7 @@ import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path/path.dart' as path;
-
-import 'assignment_data.dart';
+import 'package:test_reqelford/model/base_model.dart';
 import 'assignment_service.dart';
 
 

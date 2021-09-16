@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:test_reqelford/model/base_model.dart';
 import 'assignment_controller.dart';
-import 'assignment_data.dart';
 
 
 
