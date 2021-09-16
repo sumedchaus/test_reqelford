@@ -8,6 +8,7 @@ import 'assessment_tile.dart';
 
 
 class AssessmentScreen extends StatelessWidget {
+  static String id = "/AssessmentScreen";
 
   @override
   Widget build(BuildContext context) {

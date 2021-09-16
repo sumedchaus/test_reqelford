@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:test_reqelford/model/base_model.dart';
+import 'package:test_reqelford/screen/assessments/assessment_tile.dart';
+import 'package:test_reqelford/widgets/icon_with_text.dart';
 import 'assignment_controller.dart';
 
 
@@ -147,27 +149,6 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
   }
 }
 
-class IconWithText extends StatelessWidget {
-  final Icon icon;
-  final String text;
-
-  IconWithText({@required this.icon, @required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: [
-          WidgetSpan(child: icon),
-          TextSpan(
-            text: text,
-            style: TextStyle(color: Colors.grey,fontSize: 12),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class AssignmentText extends StatelessWidget {
   final Color textBackgroundColor;
