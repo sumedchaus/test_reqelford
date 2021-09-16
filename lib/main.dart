@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_reqelford/screen/assessments/assessments_controller.dart';
 import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
 import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(AssignmentController());
+    Get.put(AssessmentController());
 
     return GetMaterialApp(
       title: 'Flutter Demo',
