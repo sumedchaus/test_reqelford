@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:test_reqelford/model/base_model.dart';
-import 'package:test_reqelford/screen/assessments/assessment_tile.dart';
+import 'package:test_reqelford/widgets/colorful_buttons.dart';
 import 'package:test_reqelford/widgets/icon_with_text.dart';
 import 'assignment_controller.dart';
 
-
-
 class AssignmentTile extends StatelessWidget {
   final Welcome welcome;
+
   AssignmentTile(this.welcome);
-AssignmentController assignmentController = Get.find<AssignmentController>();
+
+  AssignmentController assignmentController = Get.find<AssignmentController>();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                     AssignmentText(
                       textBackgroundColor: Colors.deepPurple[400],
                       title:
-                      ' ${DateFormat('dd-MM-yyyy').format(DateTime.now())}',
+                          ' ${DateFormat('dd-MM-yyyy').format(DateTime.now())}',
                     ),
                     SizedBox(
                       height: 5,
@@ -63,7 +63,7 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                                     color: Colors.grey,
                                   ),
                                   text:
-                                  ' ${DateFormat('dd-MM-yyyy').format(DateTime.now())}',
+                                      ' ${DateFormat('dd-MM-yyyy').format(DateTime.now())}',
                                 ),
                                 SizedBox(
                                   width: 15,
@@ -94,44 +94,59 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
                             Row(
                               children: [
                                 Expanded(
-                                    child: RaisedButton(
-                                      onPressed: () {
-                                        assignmentController.onReceivedProgress();
-                                        assignmentController.download(welcome.imageLink,welcome.name);
-
-
-
-                                      },
-                                      child: Text(
-                                        "Download",
-                                        style: TextStyle(color: Colors.purple),
-                                      ),
-                                      color: Colors.deepPurple[100],
-                                    )),
+                                    child: ColorfulButtons(
+                                  text: 'Download',
+                                  onTap: () {
+                                    assignmentController.onReceivedProgress();
+                                    assignmentController.download(
+                                        welcome.imageLink, welcome.name);
+                                  },
+                                  buttonColor: Colors.purple[100],
+                                  textColor: Colors.purple,
+                                )),
+                                // Expanded(
+                                //     child: RaisedButton(
+                                //   onPressed: () {
+                                //     assignmentController.onReceivedProgress();
+                                //     assignmentController.download(
+                                //         welcome.imageLink, welcome.name);
+                                //   },
+                                //   child: Text(
+                                //     "Download",
+                                //     style: TextStyle(color: Colors.purple),
+                                //   ),
+                                //   color: Colors.purple[100],
+                                // )),
                                 SizedBox(
                                   width: 10,
                                 ),
                                 Expanded(
-                                    child: RaisedButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "Upload File",
-                                        style: TextStyle(color: Colors.blue),
-                                      ),
-                                      color: Colors.lightBlue[100],
-                                    )),
+                                    child: ColorfulButtons(
+                                  text: "Upload",
+                                  textColor: Colors.blue,
+                                  buttonColor: Colors.blue[100],
+                                  onTap: () {},
+                                )),
                                 SizedBox(
                                   width: 10,
                                 ),
+
                                 Expanded(
-                                    child: RaisedButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "View File",
-                                        style: TextStyle(color: Colors.green),
-                                      ),
-                                      color: Colors.greenAccent[100],
-                                    )),
+                                    child: ColorfulButtons(
+                                  buttonColor: Colors.green[100],
+                                  text: 'View File',
+                                  textColor: Colors.green,
+                                  onTap: (){},
+                                )),
+                                // Expanded(
+                                //     child: RaisedButton(
+                                //   onPressed: () {},
+                                //   child: Text(
+                                //     "View File",
+                                //     style: TextStyle(color: Colors.green),
+                                //   ),
+                                //   color: Colors.green[100],
+                                // )),
                               ],
                             )
                           ],
@@ -149,7 +164,6 @@ AssignmentController assignmentController = Get.find<AssignmentController>();
   }
 }
 
-
 class AssignmentText extends StatelessWidget {
   final Color textBackgroundColor;
   final String title;
@@ -163,11 +177,9 @@ class AssignmentText extends StatelessWidget {
       color: textBackgroundColor,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Text(title,
-          style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold
-          ),
+        child: Text(
+          title,
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
     );
