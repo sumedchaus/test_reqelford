@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:test_reqelford/model/base_model.dart';
 import 'package:test_reqelford/screen/profile/profile_card.dart';
 import 'package:test_reqelford/screen/profile/profile_text.dart';
+import 'package:test_reqelford/widgets/my_drawer.dart';
 import 'my_painter.dart';
 
 class ProfileScreen extends StatelessWidget {
+  static final String id = "/ProfileScreen";
   final Welcome welcome;
 
   ProfileScreen({this.welcome});
@@ -15,6 +17,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Profile"),
       ),
+      endDrawer: MyDrawer(),
       body: Container(
         width: double.infinity,
         child: ListView(

@@ -72,8 +72,7 @@ class MyDrawer extends StatelessWidget {
             listTileDrawer(
                 text: 'Profile',
                 onTap: () {
-                  // Get.toNamed(ProfileScreen.id);
-                  Get.to(ProfileScreen());
+                  Get.toNamed(ProfileScreen.id);
                 },
                 icon: Icon(Icons.person)),
             listTileDrawer(

@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: LoginScreen.id, page: () => LoginScreen()),
         GetPage(name: DashBoard.id, page: () => DashBoard()),
-        // GetPage(name: ProfileScreen.id, page: () => ProfileScreen()),
+        GetPage(name: ProfileScreen.id, page: () => ProfileScreen()),
         GetPage(name: AssignmentScreen.id, page: () => AssignmentScreen()),
         GetPage(name: ClassScheduleScreen.id, page: () => ClassScheduleScreen()),
         GetPage(name: VideoScreen.id, page: () => VideoScreen()),
