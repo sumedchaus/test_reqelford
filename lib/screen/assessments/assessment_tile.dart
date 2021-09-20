@@ -80,8 +80,6 @@ class AssessmentTile extends StatelessWidget {
                             textCancel: 'ok',
 
 
-                             // actions: <Widget>[Icon(Icons.cancel_outlined),],
-
                         );
 
                       },

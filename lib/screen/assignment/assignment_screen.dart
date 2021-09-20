@@ -10,8 +10,8 @@ import 'assignment_tile.dart';
 class AssignmentScreen extends StatelessWidget {
  static final String id = '/AssignmentScreen';
   // String now = DateFormat("dd-MM-yyyy").format(DateTime.now());
-  Welcome welcome = Welcome();
-  AssignmentController assignmentController = Get.find<AssignmentController>();
+
+
 
 
 
