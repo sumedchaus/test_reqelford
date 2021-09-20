@@ -9,7 +9,7 @@ import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/fee_receipt/fee_controller.dart';
 import 'package:test_reqelford/screen/fee_receipt/fee_receipt_screen.dart';
 import 'package:test_reqelford/screen/login_screen.dart';
-import 'package:test_reqelford/screen/profile_screen.dart';
+import 'package:test_reqelford/screen/profile/profile_screen.dart';
 import 'package:test_reqelford/screen/video/screens/video_screen.dart';
 
 
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: LoginScreen.id, page: () => LoginScreen()),
         GetPage(name: DashBoard.id, page: () => DashBoard()),
-        GetPage(name: ProfileScreen.id, page: () => ProfileScreen()),
+        // GetPage(name: ProfileScreen.id, page: () => ProfileScreen()),
         GetPage(name: AssignmentScreen.id, page: () => AssignmentScreen()),
         GetPage(name: ClassScheduleScreen.id, page: () => ClassScheduleScreen()),
         GetPage(name: VideoScreen.id, page: () => VideoScreen()),

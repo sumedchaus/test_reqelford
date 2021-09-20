@@ -7,7 +7,7 @@ import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/class_schedule/class_schedule.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
 import 'package:test_reqelford/screen/fee_receipt/fee_receipt_screen.dart';
-import 'package:test_reqelford/screen/profile_screen.dart';
+import 'package:test_reqelford/screen/profile/profile_screen.dart';
 import 'package:test_reqelford/screen/video/screens/video_screen.dart';
 
 import 'list_expansion_tile.dart';
@@ -72,7 +72,8 @@ class MyDrawer extends StatelessWidget {
             listTileDrawer(
                 text: 'Profile',
                 onTap: () {
-                  Get.toNamed(ProfileScreen.id);
+                  // Get.toNamed(ProfileScreen.id);
+                  Get.to(ProfileScreen());
                 },
                 icon: Icon(Icons.person)),
             listTileDrawer(
