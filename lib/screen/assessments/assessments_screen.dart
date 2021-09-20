@@ -9,6 +9,7 @@ import 'assessment_tile.dart';
 
 class AssessmentScreen extends StatelessWidget {
   static String id = "/AssessmentScreen";
+  AssessmentController assessmentController = Get.find<AssessmentController>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,7 @@ class AssessmentScreen extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.deepPurple[100],
         ),
-        body:GetX<AssessmentController>(
-          init: AssessmentController(),
-          builder: (assessmentController) =>
-              ListView.builder(
+        body: Obx(() => ListView.builder(
                itemCount: assessmentController.listData.length,
 
                 itemBuilder: (context,index){ return AssessmentTile(assessmentController.listData[index]

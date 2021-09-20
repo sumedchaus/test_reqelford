@@ -22,7 +22,7 @@ class AssignmentTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(20.0),
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -38,7 +38,7 @@ class AssignmentTile extends StatelessWidget {
                       height: 5,
                     ),
                     AssignmentText(
-                      title: " ${welcome.name}",
+                      title: "${welcome.name}",
                       textBackgroundColor: Colors.red[400],
                     ),
                     Container(
@@ -104,21 +104,9 @@ class AssignmentTile extends StatelessWidget {
                                   buttonColor: Colors.purple[100],
                                   textColor: Colors.purple,
                                 )),
-                                // Expanded(
-                                //     child: RaisedButton(
-                                //   onPressed: () {
-                                //     assignmentController.onReceivedProgress();
-                                //     assignmentController.download(
-                                //         welcome.imageLink, welcome.name);
-                                //   },
-                                //   child: Text(
-                                //     "Download",
-                                //     style: TextStyle(color: Colors.purple),
-                                //   ),
-                                //   color: Colors.purple[100],
-                                // )),
+
                                 SizedBox(
-                                  width: 10,
+                                  width: 8,
                                 ),
                                 Expanded(
                                     child: ColorfulButtons(
@@ -128,7 +116,7 @@ class AssignmentTile extends StatelessWidget {
                                   onTap: () {},
                                 )),
                                 SizedBox(
-                                  width: 10,
+                                  width: 8,
                                 ),
 
                                 Expanded(

@@ -13,7 +13,6 @@ class FeeReceiptScreen extends StatelessWidget {
 
 
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +25,9 @@ class FeeReceiptScreen extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.deepPurple[100],
         ),
-        body: GetX<FeeController>(
+        body:
+
+        GetX<FeeController>(
           init: FeeController(),
           builder: (feeController) =>
               ListView.builder(
@@ -40,7 +41,7 @@ class FeeReceiptScreen extends StatelessWidget {
 
               ),
 
-        )
+        ),
     );
   }
 }

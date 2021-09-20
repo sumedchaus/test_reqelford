@@ -10,21 +10,20 @@ class ColorfulButtonWithIcon extends StatelessWidget {
   final Icon buttonIcon;
   final Function onTap;
 
-  ColorfulButtonWithIcon({@required this.text,@required this.textColor,@required this.buttonColor,@required this.buttonIcon, @required this.onTap});
+  ColorfulButtonWithIcon({@required this.text,@required this.textColor, this.buttonColor, this.buttonIcon, @required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: RaisedButton.icon(
-          onPressed: onTap,
-          label: Text(
-            text,
-            style: TextStyle(color: textColor),
-          ),
-          color: buttonColor,
+    return RaisedButton.icon(
+      onPressed: onTap,
+      label: Text(
+        text,
+        style: TextStyle(color: textColor),
+      ),
+      color: buttonColor,
 
-          icon: buttonIcon,
+      icon: buttonIcon,
 
-        ));
+    );
   }
 }

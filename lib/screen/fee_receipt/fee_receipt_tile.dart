@@ -7,7 +7,6 @@ import 'package:test_reqelford/screen/fee_receipt/fee_controller.dart';
 import 'package:test_reqelford/widgets/color_button_with_icon.dart';
 import 'package:test_reqelford/widgets/icon_with_text.dart';
 
-
 class FeeReceiptTile extends StatelessWidget {
   final Welcome welcome;
 
@@ -32,47 +31,69 @@ class FeeReceiptTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-
                     Container(
                       width: double.maxFinite,
                       child: Text(
                         now,
                         style: TextStyle(
                           // color: Colors.black,
-                            fontWeight: FontWeight.bold
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
-                    Text("\$  ${welcome.price}",
-                      style: TextStyle(color: Colors.grey, fontSize: 12),),
-                    SizedBox(height: 5,),
-                    IconWithText(icon: Icon(Icons.receipt, size: 15,
-                      color: Colors.grey,), text: "  ${welcome.id.toString()}"),
-                    SizedBox(height: 5,),
-                    IconWithText(icon: Icon(Icons.food_bank, size: 15,
-                      color: Colors.grey,),
-                        text: "  ${welcome.rating.toString()}"),
-                    SizedBox(height: 15,),
-                   Text("Total Paid : ${welcome.price}",style: TextStyle(
-                     fontWeight: FontWeight.bold,
-                     fontSize: 15
-                   ),),
-                    SizedBox(height: 10,),
-
-                    RaisedButton.icon(
-                      onPressed: () {
-                        feeController.onReceivedProgress();
-                        feeController.download(welcome.imageLink, welcome.name);
-                      },
-                      icon: Icon(Icons.download, color: Colors.purple,),
-                      label: Text(
-                        "Download Receipt",
-                        style: TextStyle(color: Colors.purple),
-                      ),
-                      color: Colors.deepPurple[100],
+                    SizedBox(
+                      height: 10,
                     ),
-
+                    IconWithText(
+                        icon: Icon(
+                          Icons.attach_money,
+                          size: 16,
+                        ),
+                        text: "  ${welcome.price}"),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    IconWithText(
+                        icon: Icon(
+                          Icons.receipt,
+                          size: 16,
+                          color: Colors.grey,
+                        ),
+                        text: "  ${welcome.id.toString()}"),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    IconWithText(
+                        icon: Icon(
+                          Icons.food_bank,
+                          size: 16,
+                          color: Colors.grey,
+                        ),
+                        text: "  ${welcome.rating.toString()}"),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Total Paid : ${welcome.price}",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ColorfulButtonWithIcon(
+                        text: "Download Receipt",
+                        textColor: Colors.purple,
+                        buttonColor: Colors.deepPurple[100],
+                        buttonIcon: Icon(
+                          Icons.download,
+                          color: Colors.purple,
+                        ),
+                        onTap: () {
+                          feeController.onReceivedProgress();
+                          feeController.download(welcome.imageLink, welcome.name);
+                        }),
 
                   ],
                 ),
@@ -84,4 +105,3 @@ class FeeReceiptTile extends StatelessWidget {
     );
   }
 }
-

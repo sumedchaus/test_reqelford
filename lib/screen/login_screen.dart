@@ -50,6 +50,7 @@ class LoginScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(15),
                           child: TextField(
+
                             controller:loginController.userNameEditingController ,
                             decoration:InputDecoration(
                               prefixIcon: Icon(Icons.person, color: Colors.blue,),

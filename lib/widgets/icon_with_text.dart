@@ -11,10 +11,10 @@ class IconWithText extends StatelessWidget {
     return RichText(
       text: TextSpan(
         children: [
-          WidgetSpan(child: icon),
+          WidgetSpan(child: icon,),
           TextSpan(
             text: text,
-            style: TextStyle(color: Colors.grey,fontSize: 12),
+            style: TextStyle(color: Colors.grey,fontSize: 15),
           ),
         ],
       ),

@@ -16,9 +16,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 class FeeController extends GetxController {
   bool allowWriteFile = false;
-  String progress = "";
+  // String progress = "";
   Dio dio;
-
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
 
@@ -34,6 +33,7 @@ class FeeController extends GetxController {
     FeeService.fetchData();
     super.onInit();
     dio = Dio();
+
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     final android = AndroidInitializationSettings('@mipmap/ic_launcher');
     final iOS = IOSInitializationSettings();
@@ -42,6 +42,9 @@ class FeeController extends GetxController {
     );
 
   }
+
+
+
   Future<void> _onSelectNotification(String json) async {
     final obj = jsonDecode(json);
 
