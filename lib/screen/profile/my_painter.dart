@@ -1,25 +1,22 @@
 import 'dart:ui';
-import 'package:flutter_shapes/flutter_shapes.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+import 'package:flutter_shapes/flutter_shapes.dart';
 
 class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final height = size.height;
     final width = size.width;
-    Paint paint = Paint()
-      ..color = Colors.white10;
+    Paint paint = Paint()..color = Colors.white10;
     paint.color.blue;
-
-    // ..style = PaintingStyle.stroke;
 
     Shapes shapes = Shapes(
         canvas: canvas,
         radius: 220,
         paint: paint,
         center: Offset(
-          width ,
+          width,
           height * 0.35,
         ),
         angle: 0);
@@ -28,9 +25,7 @@ class MyPainter extends CustomPainter {
     shapes.drawType(ShapeType.Circle); // enum
     shapes.draw('Circle');
 
-    Paint paint1 = Paint()
-      ..color = Colors.white10;
-    // ..style = PaintingStyle.stroke;
+    Paint paint1 = Paint()..color = Colors.white10;
 
     Shapes shapes1 = Shapes(
         canvas: canvas,

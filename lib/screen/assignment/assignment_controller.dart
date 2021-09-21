@@ -6,13 +6,13 @@ import 'package:downloads_path_provider_28/downloads_path_provider_28.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:open_file/open_file.dart';
+import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:path/path.dart' as path;
 import 'package:test_reqelford/model/base_model.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'assignment_service.dart';
 
+import 'assignment_service.dart';
 
 class AssignmentController extends GetxController {
   bool allowWriteFile = false;
@@ -21,8 +21,7 @@ class AssignmentController extends GetxController {
 
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
-
-  List<Welcome> listData = List<Welcome>().obs;
+  RxList<Welcome> listData = RxList<Welcome>([]);
   var _x;
 
   get x => _x;
@@ -38,10 +37,10 @@ class AssignmentController extends GetxController {
     final android = AndroidInitializationSettings('@mipmap/ic_launcher');
     final iOS = IOSInitializationSettings();
     final initSettings = InitializationSettings(android, iOS);
-    flutterLocalNotificationsPlugin.initialize(initSettings, onSelectNotification: _onSelectNotification
-   );
-
+    flutterLocalNotificationsPlugin.initialize(initSettings,
+        onSelectNotification: _onSelectNotification);
   }
+
   Future<void> _onSelectNotification(String json) async {
     final obj = jsonDecode(json);
 
@@ -49,23 +48,13 @@ class AssignmentController extends GetxController {
       OpenFile.open(obj['filePath']);
     } else {
       Get.snackbar('Error', 'Error File Download');
-      // showDialog(
-      //   context: context,
-      //   builder: (_) => AlertDialog(
-      //     title: Text('Error'),
-      //     content: Text('${obj['error']}'),
-      //   ),
-      // );
     }
   }
+
   Future<void> _showNotification(Map<String, dynamic> downloadStatus) async {
     final android = AndroidNotificationDetails(
-        'channel id',
-        'channel name',
-        'channel description',
-        priority: Priority.High,
-        importance: Importance.Max
-    );
+        'channel id', 'channel name', 'channel description',
+        priority: Priority.High, importance: Importance.Max);
     final iOS = IOSNotificationDetails();
     final platform = NotificationDetails(android, iOS);
     final json = jsonEncode(downloadStatus);
@@ -74,36 +63,38 @@ class AssignmentController extends GetxController {
     await flutterLocalNotificationsPlugin.show(
         0, // notification id
         isSuccess ? 'Success' : 'Failure',
-        isSuccess ? 'File has been downloaded successfully!' : 'There was an error while downloading the file.',
+        isSuccess
+            ? 'File has been downloaded successfully!'
+            : 'There was an error while downloading the file.',
         platform,
-        payload: json
-    );
+        payload: json);
   }
+
   Future<Directory> _getDownloadDirectory() async {
     if (Platform.isAndroid) {
       return await DownloadsPathProvider.downloadsDirectory;
     }
 
-    // in this example we are using only Android and iOS so I can assume
-    // that you are not trying it for other platforms and the if statement
-    // for iOS is unnecessary
-
-    // iOS directory visible to user
     return await getApplicationDocumentsDirectory();
   }
+
   Future<bool> _requestPermissions() async {
-    var permission = await PermissionHandler().checkPermissionStatus(PermissionGroup.storage);
+    var permission = await PermissionHandler()
+        .checkPermissionStatus(PermissionGroup.storage);
 
     if (permission != PermissionStatus.granted) {
       await PermissionHandler().requestPermissions([PermissionGroup.storage]);
-      permission = await PermissionHandler().checkPermissionStatus(PermissionGroup.storage);
+      permission = await PermissionHandler()
+          .checkPermissionStatus(PermissionGroup.storage);
     }
 
     return permission == PermissionStatus.granted;
   }
-  void onReceivedProgress(){
+
+  void onReceivedProgress() {
     Get.snackbar("Downloading", "Downloading Started");
   }
+
   Future<void> _startDownload(String savePath, String url) async {
     Map<String, dynamic> result = {
       'isSuccess': false,
@@ -113,15 +104,8 @@ class AssignmentController extends GetxController {
 
     try {
       final response = await dio.download(
-
-
         url,
-        // listData[index].imageLink
-        // fileUrl,
         savePath,
-
-
-
 
         // onReceiveProgress: _onReceiveProgress
       );
@@ -140,12 +124,11 @@ class AssignmentController extends GetxController {
     fileName = "$fileName.jpg";
     if (isPermissionStatusGranted) {
       final savePath = path.join(dir.path, fileName);
-      await _startDownload(savePath,url);
+      await _startDownload(savePath, url);
     } else {
       // handle the scenario when user declines the permissions
     }
   }
-
 
   Future<void> launchInBrowser(String url) async {
     if (await canLaunch(url)) {
@@ -159,6 +142,4 @@ class AssignmentController extends GetxController {
       throw 'Could not launch $url';
     }
   }
-
 }
-

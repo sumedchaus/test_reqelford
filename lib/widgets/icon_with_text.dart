@@ -14,7 +14,7 @@ class IconWithText extends StatelessWidget {
           WidgetSpan(child: icon),
           TextSpan(
             text: text,
-            style: TextStyle(color: Colors.grey,fontSize: 12),
+            style:const TextStyle(color: Colors.grey,fontSize: 12),
           ),
         ],
       ),

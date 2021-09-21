@@ -12,10 +12,6 @@ var loading = true;
 
 class FeeService {
   static Future<List<Welcome>> fetchData() async {
-    // Future.delayed(
-    //     Duration.zero,
-    //         () => Get.dialog(Center(child: CircularProgressIndicator()),
-    //         barrierDismissible: false));
     String url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
 
     Dio dio = Dio();
@@ -31,5 +27,6 @@ class FeeService {
       }
       return controller.listData;
     }
+    return null;
   }
 }

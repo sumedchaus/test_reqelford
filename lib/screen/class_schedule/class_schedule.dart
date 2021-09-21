@@ -23,21 +23,11 @@ class ClassScheduleScreen extends StatelessWidget {
           backgroundColor: Colors.deepPurple[100],
           bottom: TabBar(
             indicator: BoxDecoration(color: Colors.deepPurple[400]),
-            tabs: [
-              Tab(
-                text: "Current",
-              ),
-              Tab(
-                text: 'Ended',
-              ),
-            ],
+            tabs: [Tab(text: "Current"), Tab(text: 'Ended')],
           ),
         ),
         body: TabBarView(
-          children: [
-            CurrentClassSchedule(),
-            EndedClassScreen(),
-          ],
+          children: [CurrentClassSchedule(), EndedClassScreen()],
         ),
       ),
     );

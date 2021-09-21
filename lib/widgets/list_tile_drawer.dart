@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_reqelford/controller/login_controller.dart';
 
-class listTileDrawer extends StatelessWidget {
-  LoginController loginController = Get.find<LoginController>();
+class ListTileDrawer extends StatelessWidget {
+ final LoginController loginController = Get.find<LoginController>();
   final String text;
   final Function onTap;
   final Icon icon;
   final Icon iconLeading;
 
-  listTileDrawer(
+  ListTileDrawer(
       { this.text, this.onTap, this.icon, this.iconLeading});
 
   @override

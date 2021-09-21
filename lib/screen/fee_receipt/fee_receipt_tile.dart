@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:test_reqelford/model/base_model.dart';
-import 'package:test_reqelford/screen/assessments/assessments_controller.dart';
 import 'package:test_reqelford/screen/fee_receipt/fee_controller.dart';
-import 'package:test_reqelford/widgets/color_button_with_icon.dart';
 import 'package:test_reqelford/widgets/icon_with_text.dart';
-
 
 class FeeReceiptTile extends StatelessWidget {
   final Welcome welcome;
 
   FeeReceiptTile(this.welcome);
 
-  FeeController feeController = Get.find<FeeController>();
-  String now = DateFormat().add_yMMMMEEEEd().format(DateTime.now());
+  final FeeController feeController = Get.find<FeeController>();
+  final String now = DateFormat().add_yMMMMEEEEd().format(DateTime.now());
 
   @override
   Widget build(BuildContext context) {
@@ -32,48 +29,68 @@ class FeeReceiptTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-
                     Container(
                       width: double.maxFinite,
                       child: Text(
                         now,
                         style: TextStyle(
-                          // color: Colors.black,
-                            fontWeight: FontWeight.bold
-                        ),
+                            // color: Colors.black,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
-                    SizedBox(height: 10,),
-                    Text("\$  ${welcome.price}",
-                      style: TextStyle(color: Colors.grey, fontSize: 12),),
-                    SizedBox(height: 5,),
-                    IconWithText(icon: Icon(Icons.receipt, size: 15,
-                      color: Colors.grey,), text: "  ${welcome.id.toString()}"),
-                    SizedBox(height: 5,),
-                    IconWithText(icon: Icon(Icons.food_bank, size: 15,
-                      color: Colors.grey,),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "\$  ${welcome.price}",
+                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    IconWithText(
+                        icon: Icon(
+                          Icons.receipt,
+                          size: 15,
+                          color: Colors.grey,
+                        ),
+                        text: "  ${welcome.id.toString()}"),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    IconWithText(
+                        icon: Icon(
+                          Icons.food_bank,
+                          size: 15,
+                          color: Colors.grey,
+                        ),
                         text: "  ${welcome.rating.toString()}"),
-                    SizedBox(height: 15,),
-                   Text("Total Paid : ${welcome.price}",style: TextStyle(
-                     fontWeight: FontWeight.bold,
-                     fontSize: 15
-                   ),),
-                    SizedBox(height: 10,),
-
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Total Paid : ${welcome.price}",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     RaisedButton.icon(
                       onPressed: () {
                         feeController.onReceivedProgress();
                         feeController.download(welcome.imageLink, welcome.name);
                       },
-                      icon: Icon(Icons.download, color: Colors.purple,),
+                      icon: Icon(
+                        Icons.download,
+                        color: Colors.purple,
+                      ),
                       label: Text(
                         "Download Receipt",
                         style: TextStyle(color: Colors.purple),
                       ),
                       color: Colors.deepPurple[100],
                     ),
-
-
                   ],
                 ),
               ),
@@ -84,4 +101,3 @@ class FeeReceiptTile extends StatelessWidget {
     );
   }
 }
-

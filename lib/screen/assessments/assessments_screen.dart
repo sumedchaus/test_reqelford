@@ -5,8 +5,6 @@ import 'package:test_reqelford/widgets/my_drawer.dart';
 
 import 'assessment_tile.dart';
 
-
-
 class AssessmentScreen extends StatelessWidget {
   static String id = "/AssessmentScreen";
 
@@ -22,19 +20,14 @@ class AssessmentScreen extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.deepPurple[100],
         ),
-        body:GetX<AssessmentController>(
+        body: GetX<AssessmentController>(
           init: AssessmentController(),
-          builder: (assessmentController) =>
-              ListView.builder(
-               itemCount: assessmentController.listData.length,
-
-                itemBuilder: (context,index){ return AssessmentTile(assessmentController.listData[index]
-
-                ); },
-
-              ),
-
-        )
-    );
+          builder: (assessmentController) => ListView.builder(
+            itemCount: assessmentController.listData.length,
+            itemBuilder: (context, index) {
+              return AssessmentTile(assessmentController.listData[index]);
+            },
+          ),
+        ));
   }
 }

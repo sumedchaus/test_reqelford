@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Profile_text extends StatelessWidget {
+class ProfileText extends StatelessWidget {
   final Color color;
   final String text;
 
-  Profile_text({this.color, this.text});
+  ProfileText({this.color, this.text});
 
   @override
   Widget build(BuildContext context) {

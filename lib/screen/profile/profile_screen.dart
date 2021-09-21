@@ -3,7 +3,6 @@ import 'package:test_reqelford/model/base_model.dart';
 import 'package:test_reqelford/screen/profile/profile_card.dart';
 import 'package:test_reqelford/screen/profile/profile_text.dart';
 import 'package:test_reqelford/widgets/my_drawer.dart';
-import 'my_painter.dart';
 
 class ProfileScreen extends StatelessWidget {
   static final String id = "/ProfileScreen";
@@ -52,70 +51,70 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Gender',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: "Male",
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Date of Birth',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: '02/03/1999',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Blood Group',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'b+',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Mobile Number',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: '9881177228',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Email',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'sumedchaus@gmail.com',
                         color: Colors.white,
                       ),
@@ -148,70 +147,70 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Student Code',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: "1300165",
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Grade',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: '|||',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Section',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'G3 A',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Syllabus ',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'CBSE',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Acadmic Year',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'AY2021-22',
                         color: Colors.white,
                       ),
@@ -244,70 +243,70 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Father ',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: "xxx",
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Mobile',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxxxxxxxx',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Email',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxx@gmail.com',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Mother ',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxx',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Mobile',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxxxxxxxx',
                         color: Colors.white,
                       ),
@@ -340,84 +339,84 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: ' House No',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: "xx-x-xx,",
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Street',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxxxxx-xxxx',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Mandal',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxxxx',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'City ',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxxxx',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'District',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxxxxx',
                         color: Colors.white,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'Pin code',
                         color: Colors.blueGrey,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Profile_text(
+                      ProfileText(
                         text: 'xxxxxxx',
                         color: Colors.white,
                       ),

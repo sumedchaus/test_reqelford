@@ -14,7 +14,7 @@ import 'list_expansion_tile.dart';
 import 'list_tile_drawer.dart';
 
 class MyDrawer extends StatelessWidget {
-  LoginController loginController = Get.find<LoginController>();
+ final LoginController loginController = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
@@ -62,26 +62,26 @@ class MyDrawer extends StatelessWidget {
                 ),
               ),
             ),
-            listTileDrawer(
+            ListTileDrawer(
               icon: Icon(Icons.dashboard_customize),
               text: 'Dashboard',
               onTap: () {
                 Get.toNamed(DashBoard.id);
               },
             ),
-            listTileDrawer(
+            ListTileDrawer(
                 text: 'Profile',
                 onTap: () {
                   Get.toNamed(ProfileScreen.id);
                 },
                 icon: Icon(Icons.person)),
-            listTileDrawer(
+            ListTileDrawer(
                 text: 'Class Schedules',
                 onTap: () {
                   Get.toNamed(ClassScheduleScreen.id);
                 },
                 icon: Icon(Icons.menu)),
-            listTileDrawer(
+            ListTileDrawer(
                 text: 'Assignments',
                 onTap: () {
                   Get.toNamed(AssignmentScreen.id);
@@ -92,7 +92,7 @@ class MyDrawer extends StatelessWidget {
               icon1: Icon(Icons.note_add),
               expansionListTile: Column(
                 children: [
-                  listTileDrawer(
+                  ListTileDrawer(
                     iconLeading: Icon(Icons.arrow_forward),
                     text: 'Assesments',
                     onTap: () {
@@ -100,7 +100,7 @@ class MyDrawer extends StatelessWidget {
 
                     },
                   ),
-                  listTileDrawer(
+                  ListTileDrawer(
                     iconLeading: Icon(Icons.arrow_forward),
                     text: 'Computerbased Test',
                     onTap: () {},
@@ -113,14 +113,14 @@ class MyDrawer extends StatelessWidget {
               icon1: Icon(Icons.video_collection),
               expansionListTile: Column(
                 children: [
-                  listTileDrawer(
+                  ListTileDrawer(
                     iconLeading: Icon(Icons.arrow_forward),
                     text: 'Genral Videos',
                     onTap: () {
                       Get.toNamed(VideoScreen.id);
                     },
                   ),
-                  listTileDrawer(
+                  ListTileDrawer(
                     iconLeading: Icon(Icons.arrow_forward),
                     text: 'Acadmic Videos',
                     onTap: () {},
@@ -128,11 +128,11 @@ class MyDrawer extends StatelessWidget {
                 ],
               ),
             ),
-            listTileDrawer(
+            ListTileDrawer(
                 text: 'Report Card',
                 onTap: () {},
                 icon: Icon(Icons.credit_card_rounded)),
-            listTileDrawer(
+            ListTileDrawer(
                 text: 'Fee Receipts', onTap: () {
               Get.toNamed(FeeReceiptScreen.id);
 
