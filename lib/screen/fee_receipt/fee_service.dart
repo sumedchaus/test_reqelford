@@ -8,14 +8,13 @@ import 'package:test_reqelford/screen/fee_receipt/fee_controller.dart';
 
 
 var controller= FeeController.to;
-var loading = true;
 
 class FeeService {
+
   static Future<List<Welcome>> fetchData() async {
     String url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
 
     Dio dio = Dio();
-
     Response response = await dio.get(url);
     // Get.back();
     if (response.statusCode == 200) {

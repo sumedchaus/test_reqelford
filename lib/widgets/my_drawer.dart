@@ -52,7 +52,7 @@ class MyDrawer extends StatelessWidget {
                           style: TextStyle(fontSize: 25),
                         ),
                         Text(
-                          'jfvkjfvkjbkfdn kb',
+                          'xxxxxxxxxxxxxx',
                           style: TextStyle(
                               fontWeight: FontWeight.w300, fontSize: 15),
                         ),

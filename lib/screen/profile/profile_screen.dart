@@ -6,15 +6,20 @@ import 'package:test_reqelford/widgets/my_drawer.dart';
 
 class ProfileScreen extends StatelessWidget {
   static final String id = "/ProfileScreen";
-  final Welcome welcome;
-
-  ProfileScreen({this.welcome});
+  // final Welcome welcome;
+  //
+  // ProfileScreen({this.welcome});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile"),
+      appBar:AppBar(
+        title: Text(
+          "Profile",
+          style: TextStyle(color: Colors.black),
+        ),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.deepPurple[100],
       ),
       endDrawer: MyDrawer(),
       body: Container(
@@ -42,14 +47,11 @@ class ProfileScreen extends StatelessWidget {
                             "Demo Student",
                             style: TextStyle(fontSize: 25),
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
                           Icon(Icons.person)
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       ProfileText(
                         text: 'Gender',
@@ -138,14 +140,12 @@ class ProfileScreen extends StatelessWidget {
                             "Reqelford \nInternational \nSchool-Rampally",
                             style: TextStyle(fontSize: 25),
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
+
                           Icon(Icons.school)
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       ProfileText(
                         text: 'Student Code',
@@ -234,14 +234,12 @@ class ProfileScreen extends StatelessWidget {
                             "Parents",
                             style: TextStyle(fontSize: 25),
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
+
                           Icon(Icons.supervised_user_circle)
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       ProfileText(
                         text: 'Father ',
@@ -330,14 +328,12 @@ class ProfileScreen extends StatelessWidget {
                             "Address",
                             style: TextStyle(fontSize: 25),
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
+
                           Icon(Icons.location_on_outlined)
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       ProfileText(
                         text: ' House No',

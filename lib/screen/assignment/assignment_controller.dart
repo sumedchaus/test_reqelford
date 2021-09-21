@@ -16,7 +16,7 @@ import 'assignment_service.dart';
 
 class AssignmentController extends GetxController {
   bool allowWriteFile = false;
-  String progress = "";
+  // String progress = "";
   Dio dio;
 
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
