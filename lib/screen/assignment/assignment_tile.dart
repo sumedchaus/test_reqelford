@@ -91,39 +91,35 @@ class AssignmentTile extends StatelessWidget {
                             height: 15,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Container(
-                                child: ColorfulButtons(
-                                  text: 'Download',
-                                  onTap: () {
-                                    assignmentController.onReceivedProgress();
-                                    assignmentController.download(
-                                        welcome.imageLink, welcome.name);
-                                  },
-                                  buttonColor: Colors.purple[100],
-                                  textColor: Colors.purple,
-                                ),
+                              ColorfulButtons(
+                                text: 'Download',
+                                onTap: () {
+                                  assignmentController.onReceivedProgress();
+                                  assignmentController.download(
+                                      welcome.imageLink, welcome.name);
+                                },
+                                buttonColor: Colors.purple[100],
+                                textColor: Colors.purple,
                               ),
                               const SizedBox(
                                 width: 10,
                               ),
-                              Container(
-                                  child: ColorfulButtons(
+                              ColorfulButtons(
                                 text: "Upload",
                                 textColor: Colors.blue,
                                 buttonColor: Colors.blue[100],
                                 onTap: () {},
-                              )),
+                              ),
                               const SizedBox(
                                 width: 10,
                               ),
-                              Container(
-                                child: ColorfulButtons(
-                                  buttonColor: Colors.green[100],
-                                  text: 'View File',
-                                  textColor: Colors.green,
-                                  onTap: () {},
-                                ),
+                              ColorfulButtons(
+                                buttonColor: Colors.green[100],
+                                text: 'View File',
+                                textColor: Colors.green,
+                                onTap: () {},
                               ),
                             ],
                           )
