@@ -16,11 +16,8 @@ class FeeReceiptScreen extends StatelessWidget {
         endDrawer: MyDrawer(),
         appBar: AppBar(
           title: Text(
-            "Fee Receipts",
-            style: TextStyle(color: Colors.black),
-          ),
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.deepPurple[100],
+            "Fee Receipts",),
+
         ),
         body: GetX<FeeController>(
           init: FeeController(),

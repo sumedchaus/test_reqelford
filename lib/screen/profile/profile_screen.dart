@@ -16,10 +16,7 @@ class ProfileScreen extends StatelessWidget {
       appBar:AppBar(
         title: Text(
           "Profile",
-          style: TextStyle(color: Colors.black),
         ),
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.deepPurple[100],
       ),
       endDrawer: MyDrawer(),
       body: Container(

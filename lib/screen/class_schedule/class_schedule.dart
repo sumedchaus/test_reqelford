@@ -16,11 +16,8 @@ class ClassScheduleScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             "Class Schedule",
-            style: TextStyle(color: Colors.black),
           ),
-          centerTitle: true,
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.deepPurple[100],
+
           bottom: TabBar(
             indicator: BoxDecoration(color: Colors.deepPurple[400]),
             tabs: [Tab(text: "Current"), Tab(text: 'Ended')],

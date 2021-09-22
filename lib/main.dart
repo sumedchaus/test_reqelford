@@ -26,15 +26,37 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: TextTheme(
-          bodyText1: TextStyle(),
-          bodyText2: TextStyle(),
-        ).apply(
-          bodyColor: Colors.black,
-          displayColor: Colors.blue,
+        appBarTheme: AppBarTheme(
+          textTheme: TextTheme(
+              headline6: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+              ),
+          ),
+          color: Colors.deepPurple[100],
         ),
+
+        // textTheme: TextTheme(
+        //   bodyText1: TextStyle(),
+        //   bodyText2: TextStyle(),
+        // ).apply(
+        //   bodyColor: Colors.black,
+        //   displayColor: Colors.blue,
+        //
+        //
+        // ),
         // platform: TargetPlatform.iOS,
         primarySwatch: Colors.deepPurple,
+        buttonColor: Colors.black,
+        primaryIconTheme: IconThemeData(color: Colors.black),
+        //    primarySwatch: Colors.blue,
+        //           primaryColor: Colors.black,
+        //           buttonColor: Colors.black,
+        //           primaryIconTheme: IconThemeData(color: Colors.black),
+        //           primaryTextTheme: TextTheme(
+        //               bodyText1: TextStyle(color: Colors.black, fontFamily: "Aveny")),
+        //           textTheme: TextTheme(bodyText1: TextStyle(color: Colors.black))),
       ),
       initialRoute: LoginScreen.id,
       getPages: [

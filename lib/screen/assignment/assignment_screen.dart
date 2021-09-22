@@ -14,11 +14,8 @@ class AssignmentScreen extends StatelessWidget {
         endDrawer: MyDrawer(),
         appBar: AppBar(
           title: Text(
-            "Assignment",
-            style: TextStyle(color: Colors.black),
-          ),
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.deepPurple[100],
+            "Assignment",)
+
         ),
         body: GetX<AssignmentController>(
           init: AssignmentController(),

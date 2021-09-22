@@ -14,11 +14,7 @@ class AssessmentScreen extends StatelessWidget {
         endDrawer: MyDrawer(),
         appBar: AppBar(
           title: Text(
-            "Assessments",
-            style: TextStyle(color: Colors.black),
-          ),
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.deepPurple[100],
+            "Assessments",)
         ),
         body: GetX<AssessmentController>(
           init: AssessmentController(),

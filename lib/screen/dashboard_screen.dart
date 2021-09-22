@@ -10,10 +10,7 @@ class DashBoard extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "DashBoard",
-          style: TextStyle(color: Colors.black),
         ),
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.deepPurple[100],
       ),
       endDrawer: MyDrawer(),
     );
