@@ -2,8 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:test_reqelford/model/base_model.dart';
 import 'package:test_reqelford/screen/assessments/assessments_controller.dart';
 
+
+
 var controller = AssessmentController.to;
 var loading = true;
+
 
 class AssessmentService {
   static Future<List<Welcome>> fetchData() async {
@@ -13,7 +16,7 @@ class AssessmentService {
 
     Dio dio = Dio();
 
-    Response response = await dio.get(url);
+    var response = await dio.get(url);
     // Get.back();
     if (response.statusCode == 200) {
       print(response.statusCode);

@@ -7,6 +7,7 @@ import 'assignment_tile.dart';
 
 class AssignmentScreen extends StatelessWidget {
   static final String id = '/AssignmentScreen';
+  AssignmentController assignmentController = Get.put(AssignmentController());
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,10 @@ class AssignmentScreen extends StatelessWidget {
         ),
         body: GetX<AssignmentController>(
           init: AssignmentController(),
-          builder: (assignmentController) => ListView.builder(
+
+          builder: (assignmentController) =>assignmentController.isLoading.value
+              ? Center(child: CircularProgressIndicator())
+              : ListView.builder(
             itemCount: assignmentController.listData.length,
             itemBuilder: (context, index) {
               return AssignmentTile(assignmentController.listData[index]);

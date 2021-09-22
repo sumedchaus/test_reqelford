@@ -12,8 +12,7 @@ class AssignmentTile extends StatelessWidget {
 
   AssignmentTile(this.welcome);
 
-  final AssignmentController assignmentController =
-      Get.find<AssignmentController>();
+  final AssignmentController assignmentController = Get.find<AssignmentController>();
 
   @override
   Widget build(BuildContext context) {

@@ -6,6 +6,7 @@ import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
 import 'package:test_reqelford/screen/assignment/assignment_screen.dart';
 import 'package:test_reqelford/screen/class_schedule/class_schedule.dart';
 import 'package:test_reqelford/screen/dashboard_screen.dart';
+import 'package:test_reqelford/screen/fee_receipt/fee_controller.dart';
 import 'package:test_reqelford/screen/fee_receipt/fee_receipt_screen.dart';
 import 'package:test_reqelford/screen/login_screen.dart';
 import 'package:test_reqelford/screen/profile/profile_screen.dart';
@@ -19,9 +20,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    Get.put(AssignmentController());
+     Get.put(AssignmentController());
     Get.put(AssessmentController());
-    //  Get.put(FeeController());
+      Get.put(FeeController());
 
     return GetMaterialApp(
       title: 'Flutter Demo',

@@ -18,6 +18,7 @@ class AssignmentController extends GetxController {
   bool allowWriteFile = false;
   // String progress = "";
   Dio dio;
+  var isLoading = false.obs;
 
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
@@ -30,6 +31,7 @@ class AssignmentController extends GetxController {
 
   @override
   void onInit() {
+    isLoading.value = true;
     DataServices.fetchData();
     super.onInit();
     dio = Dio();
