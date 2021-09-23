@@ -4,7 +4,7 @@ import 'package:test_reqelford/const/asset_path.dart';
 import 'package:test_reqelford/controller/login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
-  final LoginController loginController = Get.put(LoginController());
+  final LoginController loginController = Get.find<LoginController>();
   static const String id = '/Login_Screen';
 
   @override
