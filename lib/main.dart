@@ -31,6 +31,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+
+        // platform: TargetPlatform.iOS,
         appBarTheme: AppBarTheme(
           textTheme: TextTheme(
               headline6: TextStyle(
@@ -63,7 +65,7 @@ class MyApp extends StatelessWidget {
         //               bodyText1: TextStyle(color: Colors.black, fontFamily: "Aveny")),
         //           textTheme: TextTheme(bodyText1: TextStyle(color: Colors.black))),
       ),
-      initialRoute: SplashScreenPage.id,
+      initialRoute: LoginScreen.id,
       getPages: [
         GetPage(name: SplashScreenPage.id, page: () => SplashScreenPage()),
         GetPage(name: LoginScreen.id, page: () => LoginScreen()),

@@ -38,6 +38,7 @@ class MyDrawer extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 30,
+                      // backgroundImage: AssetImage(profileImage),
                       backgroundColor: Colors.transparent, //temperory
                       child: Image.asset(profileImage),
                     ),

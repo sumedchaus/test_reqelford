@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_reqelford/model/base_model.dart';
 import 'package:test_reqelford/screen/assignment/assignment_controller.dart';
 
 import 'class_tile.dart';
 
 class CurrentClassSchedule extends StatelessWidget {
   static final String id = '/AssignmentScreen';
-  final Welcome welcome = Welcome();
 
   final AssignmentController assignmentController =
       Get.put<AssignmentController>(AssignmentController());
